@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import logoMeli from '../../assets/images/Logo_ML.png';
 import searchIcon from '../../assets/images/ic_Search@2x.png'
@@ -7,12 +8,13 @@ import './header.styles.scss';
 
 
 const Header = () => {
+  const history = useHistory();
   const [searchField, setSearchField] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault()
     const query = searchField
-    // direct to searched products
+    history.push({pathname: '/items', search: `?search=${query}`})
   }
   
   return (
