@@ -1,0 +1,15 @@
+.header {
+  background-color: #FFE600;
+  height: 10vh;
+  display: flex;
+
+  .logo-search{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    
+    img {
+      margin: auto 20px;
+    }
+  }
+}
