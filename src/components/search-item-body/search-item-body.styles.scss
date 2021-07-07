@@ -1,0 +1,49 @@
+.item-body {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+
+  .image-price-description {
+    display: flex;
+  }
+
+  .item-image {
+    width: 180px;
+    height: 180px;
+    margin-right: 16px;
+    border-radius: 4px;
+    background-size: cover;
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+
+    .value {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    img{
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+    }
+  }
+
+  .description {
+    margin-top: 16px;
+    font-size: 1.25rem;
+  }
+
+  .status {
+    font-size: 1.25rem;
+  }
+
+  .city {
+    margin-top: 55px;
+    color: #999999;
+    width: 160px;
+  }
+}

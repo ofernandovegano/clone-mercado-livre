@@ -2,7 +2,7 @@ import Routes from './routes';
 
 import { GlobalStyle } from './global.styles'
 
-import Header from './components/Header/header.component';
+import Header from './components/header/header.component';
 
 const App = () => (
   <div className="App">
