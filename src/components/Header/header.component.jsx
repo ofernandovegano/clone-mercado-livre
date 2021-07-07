@@ -8,11 +8,18 @@ import './header.styles.scss';
 
 const Header = () => {
   const [searchField, setSearchField] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const query = searchField
+    // direct to searched products
+  }
+  
   return (
     <div className="header">
       <div className="logo-search">
         <img className='logo' src={logoMeli} alt="logo do mercado livre" />
-        <form className="search-form">
+        <form className="search-form" onSubmit={event => handleSubmit(event)}>
           <div className="search-box">
             <input onChange={((e) => setSearchField(e.target.value))} placeholder="Nunca dejes de buscar" name="q" />
             <button className='submit-button' type='submit'>
