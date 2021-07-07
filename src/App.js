@@ -6,7 +6,6 @@ const App = () => (
   <div className="App">
     <GlobalStyle />
     <Header />
-    <h1>TEsteeeeee</h1>
   </div>
 )
 

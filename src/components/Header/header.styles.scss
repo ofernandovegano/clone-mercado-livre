@@ -1,15 +1,57 @@
 .header {
   background-color: #FFE600;
-  height: 10vh;
+  height: 8vh;
   display: flex;
 
   .logo-search{
     margin: 0 auto;
     display: flex;
     align-items: center;
+    width: 80%;
     
-    img {
-      margin: auto 20px;
+    .logo {
+      margin-right: 20px;
     }
+  }
+
+  .search-form {
+    width: 100%;
+    display: flex;
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      height: 5vh;
+      border-radius: 5px 0 0 5px;
+      padding: 12px;
+
+      &:focus-visible {
+        outline: none;
+      }
+
+    }
+  }
+
+
+  .submit-button {
+    border-radius: 0 5px 5px 0;
+    width: 40px;
+    height: 5vh;
+    border: none;
+    display: flex;
+
+    img {
+      margin: auto;
+    }
+  }
+
+  .search-icon {
+    width: 15px;
   }
 }
