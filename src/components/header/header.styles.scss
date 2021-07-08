@@ -46,6 +46,10 @@
     border: none;
     display: flex;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     img {
       margin: auto;
     }
