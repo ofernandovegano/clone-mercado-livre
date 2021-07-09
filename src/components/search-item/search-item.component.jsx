@@ -4,9 +4,9 @@ import SearchItemBody from '../search-item-body/search-item-body.component';
 
 import './search-item.styles.scss';
 
-const SearchItem = () => (
+const SearchItem = ({item}) => (
   <div className="item">
-    <SearchItemBody />
+    <SearchItemBody item={item} />
     <hr />
   </div>
 );

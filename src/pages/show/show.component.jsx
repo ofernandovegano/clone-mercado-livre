@@ -6,11 +6,11 @@ const Show = () => (
   <div className="show-page">
     <div className="item">
       <div className="image-description">
-        <div className='item-image'
+        {/* <div className='item-image'
           style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1510166218561-8b0b8df7c887?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=511&q=80")`
+            backgroundImage: `url("https://http2.mlstatic.com/D_NQ_NP_${imageID}-O.webp")`
           }}>
-        </div>
+        </div> */}
         <div className="description">
           <h3 className='description-title'>Descripción del producto</h3>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex voluptas, debitis explicabo repellendus culpa quaerat eum, non iusto quia delectus cumque assumenda animi qui? Dolores obcaecati expedita illo officiis eos?
