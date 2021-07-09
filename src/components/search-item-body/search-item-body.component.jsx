@@ -5,7 +5,14 @@ import shippingIcon from '../../assets/images/ic_shipping@2x.png'
 import './search-item-body.styles.scss';
 
 const SearchItemBody = ({item}) => {
-  const { price, accepts_mercadopago: acceptsMercadopago, thumbnail_id: imageID, title, address } = item
+  const { 
+    price,
+    accepts_mercadopago: acceptsMercadopago,
+    thumbnail_id: imageID,
+    title,
+    address,
+    condition
+  }= item
 
   return(
     <div className="item-body">
@@ -29,7 +36,7 @@ const SearchItemBody = ({item}) => {
             {title}
           </div>
           <div className="status">
-            Completo Unico!
+            {condition}
           </div>
         </div>
       </div>

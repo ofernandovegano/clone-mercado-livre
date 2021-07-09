@@ -12,7 +12,9 @@
     height: 180px;
     margin-right: 16px;
     border-radius: 4px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .price {
