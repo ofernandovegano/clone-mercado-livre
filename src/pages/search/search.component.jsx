@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 import { apiSearch } from '../../service/api';
 
@@ -13,7 +13,7 @@ const Search = () => {
 
   useEffect(() => {
     const search = url.search.split("?search=")[1]
-    apiSearch.get(`/search?q=${search}`).then(response => {
+    apiSearch.get(`search?q=${search}`).then(response => {
       setItems(response.data.results)
       console.log(response.data.results.slice(0, 4))
     })
@@ -23,7 +23,9 @@ const Search = () => {
   <div className="search-page">
     <div className="items">
       {items?.slice(0, 4).map(item => (
-        <SearchItem item={item} key={item.id} />
+        <Link to={`items/${item.id}`}>
+          <SearchItem item={item} key={item.id} />
+        </Link>
       ))}
     </div>
   </div>

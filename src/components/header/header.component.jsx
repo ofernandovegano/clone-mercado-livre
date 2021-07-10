@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import logoMeli from '../../assets/images/Logo_ML.png';
 import searchIcon from '../../assets/images/ic_Search@2x.png'
@@ -20,7 +20,9 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo-search">
-        <img className='logo' src={logoMeli} alt="logo do mercado livre" />
+        <Link to="/">
+          <img className='logo' src={logoMeli} alt="logo do mercado livre" />
+        </Link>
         <form className="search-form" onSubmit={event => handleSubmit(event)}>
           <div className="search-box">
             <input onChange={((e) => setSearchField(e.target.value))} placeholder="Nunca dejes de buscar" name="q" />
