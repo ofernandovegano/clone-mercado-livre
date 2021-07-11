@@ -9,13 +9,13 @@ const SearchItemBody = ({item}) => {
 
   return(
     <div className="item-body">
-      <div className="image-price-description">
+      <div className="image-price-details">
         <div className='item-image'
           style={{
             backgroundImage: `url(${picture})`
           }}>
         </div>
-        <div className="price-description">
+        <div className="price-details">
           <div className="price">
             <div className='value'>$ {price.amount}</div>
             {
@@ -25,11 +25,11 @@ const SearchItemBody = ({item}) => {
             }
             
           </div>
-          <div className="description">
+          <div className="title">
             {title}
           </div>
           <div className="status">
-            {condition}
+            {condition === "new" ? "Nuevo!" : ""}
           </div>
         </div>
       </div>
