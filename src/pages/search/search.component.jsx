@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
-import { apiSearch } from '../../service/api';
+import { apiBackend } from '../../service/api';
 
 import SearchItem from '../../components/search-item/search-item.component'
 
@@ -13,18 +13,22 @@ const Search = () => {
 
   useEffect(() => {
     const search = url.search.split("?search=")[1]
-    apiSearch.get(`search?q=${search}`).then(response => {
-      setItems(response.data.results)
-      console.log(response.data.results.slice(0, 4))
-    })
+    try{
+      apiBackend.get(`?q=${search}`).then(response => {
+        setItems(response.data.items)
+        console.log(response.data.items)
+      })
+    } catch(error) {
+      console.log(error);
+    }
   }, [url])
 
   return(
   <div className="search-page">
     <div className="items">
-      {items?.slice(0, 4).map(item => (
-        <Link to={`items/${item.id}`}>
-          <SearchItem item={item} key={item.id} />
+      {items?.map(item => (
+        <Link to={`items/${item.id}`} key={item.id} >
+          <SearchItem item={item} />
         </Link>
       ))}
     </div>

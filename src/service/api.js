@@ -1,9 +1,6 @@
 import axios from "axios";
 
-export const apiSearch = axios.create({
-    baseURL: 'https://api.mercadolibre.com/sites/MLA/'
+export const apiBackend = axios.create({
+    baseURL: 'https://api-backend-meli.herokuapp.com/api/items'
 })
 
-export const apiShowItem = axios.create({
-    baseURL: 'https://api.mercadolibre.com/items/'
-})
