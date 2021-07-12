@@ -18,7 +18,7 @@ const Show = () => {
     apiBackend.get(`/${params.id}`).then(response => {
       setItem(response.data.item)
       console.log(response.data.item)
-    setIsLoading(false);
+      setIsLoading(false);
     })
   },[params.id])
 
