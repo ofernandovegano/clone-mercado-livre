@@ -19,16 +19,15 @@ const Search = () => {
       apiBackend.get(`?q=${search}`).then(response => {
         setItems(response.data.items)
         console.log(response.data.items)
+        setIsLoading(false);
       })
     } catch(error) {
       console.log(error);
     }
-    setIsLoading(false);
   }, [url])
 
   return(
   <div className="search-page">
-  {console.log(isLoading)}
     <Items isLoading={ isLoading } items={ items } />
   </div>
   )
