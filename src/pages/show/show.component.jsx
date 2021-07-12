@@ -3,45 +3,28 @@ import { useParams } from 'react-router-dom';
 
 import { apiBackend } from '../../service/api';
 
+import Item from '../../components/item/item.component'
+
 import './show.styles.scss';
 
 const Show = () => {
   const params = useParams();
   const [item, setItem] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
 
   useEffect(()=> {
+    setIsLoading(true);
     apiBackend.get(`/${params.id}`).then(response => {
       setItem(response.data.item)
       console.log(response.data.item)
+    setIsLoading(false);
     })
   },[params.id])
 
-  const { price, picture, title, condition, sold_quantity, description } = item
-  
   return(
   <div className="show-page">
-    <div className="item">
-      <div className="image-description">
-        <div className='item-image'
-          style={{ backgroundImage: `url(${picture?.secure_url})` }}>
-        </div>
-        <div className="description">
-          <h3 className='description-title'>Descripción del producto</h3>
-          <p>{description? description : "No hay descripción"}</p>
-        </div>
-      </div>
-
-      <div className="call-to-action">
-        <p>
-          {condition === "new" ? "Nuevo" : "Usado"} - {sold_quantity} vendidos
-        </p>
-        <h2>{title}</h2>
-        <div className="price">
-          $ {price?.amount}<span>{price?.decimals}</span>
-        </div>
-        <button>Comprar</button>
-      </div>
-    </div>
+    <Item isLoading={ isLoading } item={item} />
   </div>
   )
 };

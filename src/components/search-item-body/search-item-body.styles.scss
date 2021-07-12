@@ -3,13 +3,21 @@
   justify-content: space-between;
   padding: 16px;
 
+  @media screen and (max-width: 800px) {
+    display: block;
+  }
+
   .image-price-details {
     display: flex;
+
+    @media screen and (max-width: 800px) {
+      display: block;
+    }
   }
 
   .item-image {
-    width: 180px;
-    height: 180px;
+    min-width: 180px;
+    min-height: 180px;
     margin-right: 16px;
     border-radius: 4px;
     background-size: contain;
@@ -17,8 +25,9 @@
     background-position: center;
 
     @media screen and (max-width: 800px) {
-      width: 140px;
-      height: 140px;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
     }
   }
 
@@ -63,7 +72,7 @@
     width: 160px;
 
     @media screen and (max-width: 800px) {
-      font-size: 0.9rem;
+      display: none;
     }
   }
 }
